@@ -29,14 +29,16 @@ The perforce plugin allows you to read the current changelist from your perforce
 Why write this? Well the build number plugin doesn't support perforce -- it currently only supports subversion, git, and mercurial. Perhaps down the road we can get this merged with the buildnumber plugin upstream.
 
 For now, there are 2 goals:
-  * read-changelist-project-property
-  * write-changelist-properties
+<ul>
+	<li>read-changelist-project-property</li>
+	<li>write-changelist-properties</li>
+</ul>
 
 "read-changelist-project-property" will query the perforce server for the most recent submitted changelist id and then place it into a maven property. The default property name is "p4.changelist".
 
 "write-changelist-properties" again queries the perforce server for the most recent submitted changelist, but it takes an output file and a property name to write the changelist id to. The default property name is "P4_CHANGELIST".
 
-An example of using read-changelist-project-property to read in the changelist number and then writing it to the manifest:
+Here's an example of using read-changelist-project-property to read in the changelist number and then writing it to the manifest:
   
 ```xml
 <build>
@@ -108,8 +110,8 @@ An example of using read-changelist-project-property to read in the changelist n
 </build>
 ```
 
-An example of using write-changelist to write the changelist number to an embedded resource, META-INF/VCS.properties:
-  
+And another example using write-changelist to write the changelist number to an embedded resource, META-INF/VCS.properties:
+
 ```xml
 <build>
 	<plugins>
